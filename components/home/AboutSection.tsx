@@ -73,12 +73,12 @@ export default function AboutSection() {
 
             <blockquote className="border-l-2 border-[#0B3A2C] pl-5 mb-8">
               <p className="text-[#5C5B57] leading-relaxed font-light">
-                "Grapple Properties strives to be a leading, innovative and diversified real estate company driven by the highest standards and values in its quest for excellence and stakeholder satisfaction."
+                &ldquo;Grapple Properties strives to be a leading, innovative and diversified real estate company driven by the highest standards and values in its quest for excellence and stakeholder satisfaction.&rdquo;
               </p>
             </blockquote>
 
             <p className="text-[#5C5B57] font-light leading-relaxed mb-8 text-sm md:text-base">
-              Founded on transparency, rigorous title verification and client-first advisory, Grapple Properties (Pvt) Ltd has become a respected voice in Harare's real estate market — representing private families, corporations and diaspora investors seeking reliable capital growth across Zimbabwe.
+              Founded on transparency, rigorous title verification and client-first advisory, Grapple Properties (Pvt) Ltd has become a respected voice in Harare&apos;s real estate market — representing private families, corporations and diaspora investors seeking reliable capital growth across Zimbabwe.
             </p>
 
             {/* Stats — horizontal rule layout, not cards */}

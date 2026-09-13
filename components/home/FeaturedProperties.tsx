@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Bed, Bath, Maximize2, Sun, Droplets } from "lucide-react";
+import { ArrowUpRight, Bed, Bath, Maximize2, Droplets } from "lucide-react";
 import { PROPERTIES, Property } from "@/data/properties";
 
 const TABS = ["All", "Residential", "Commercial", "Land", "Rentals"] as const;
@@ -17,7 +17,7 @@ function PropertyCard({ p, index }: { p: Property; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16, scale: 0.98 }}
       transition={{ duration: 0.55, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
-      className="group bg-white border border-[#E2DEDA]"
+      className={`group bg-white border border-[#E2DEDA] ${index === 0 ? "lg:col-span-7" : index === 1 ? "lg:col-span-5" : "lg:col-span-4"}`}
     >
       {/* Image */}
       <Link href={`/properties/${p.slug}`} className="block relative overflow-hidden aspect-[4/3]">
@@ -94,29 +94,29 @@ export default function FeaturedProperties() {
       : PROPERTIES.filter((p) => p.type === active);
 
   return (
-    <section id="featured-properties" className="py-24 md:py-32 bg-[#F8F5F0]">
+    <section id="featured-properties" className="bg-[#F8F5F0] py-24 md:py-36">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
 
         {/* Section header — asymmetric split */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="mb-12 grid gap-7 border-b border-[#cbc6bc] pb-8 md:grid-cols-[1.1fr_.9fr] md:items-end">
           <div>
             <h2 className="serif text-[clamp(2.2rem,5vw,3.8rem)] text-[#18181A] leading-[1.05] tracking-[-0.02em]">
-              Featured Properties
+              Selected field notes
             </h2>
-            <p className="text-sm text-[#5C5B57] mt-3 max-w-sm font-light leading-relaxed">
-              Prime residential, commercial and development opportunities across Harare's most coveted suburbs.
+            <p className="text-sm text-[#5C5B57] mt-3 max-w-md font-light leading-relaxed">
+              A working portfolio of homes, land and commercial assets—presented with the facts that matter in Harare.
             </p>
           </div>
 
           {/* Filter tabs — not buttons-as-pills, just text */}
-          <div className="flex items-center gap-0 border border-[#E2DEDA] overflow-hidden">
+          <div className="flex items-center gap-0 overflow-x-auto border border-[#cbc6bc] md:justify-self-end">
             {TABS.map((t) => (
               <button
                 key={t}
                 onClick={() => setActive(t)}
                 className={`text-xs font-medium px-4 py-2.5 transition-colors border-r last:border-r-0 border-[#E2DEDA] cursor-pointer ${
                   active === t
-                    ? "bg-[#0B3A2C] text-white"
+                    ? "bg-[#10271f] text-white"
                     : "bg-white text-[#5C5B57] hover:bg-[#F0EDE8]"
                 }`}
               >
@@ -128,7 +128,7 @@ export default function FeaturedProperties() {
 
         {/* Grid — editorial: first property gets double col on large screens */}
         <AnimatePresence mode="popLayout">
-          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E2DEDA]">
+          <motion.div layout className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
             {filtered.slice(0, 6).map((p, i) => (
               <PropertyCard key={p.id} p={p} index={i} />
             ))}

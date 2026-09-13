@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import '@fontsource/bodoni-moda/400.css';
+@import '@fontsource/bodoni-moda/400-italic.css';
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/manrope/500.css';
+@import '@fontsource/manrope/600.css';
+@import '@fontsource/manrope/700.css';
 @import "tailwindcss";
 
 :root {
@@ -17,8 +22,8 @@
 }
 
 @theme {
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-sans:  'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Bodoni Moda', Georgia, serif;
+  --font-sans:  'Manrope', system-ui, sans-serif;
   --color-g-dark:    #0B3A2C;
   --color-g-darker:  #071F17;
   --color-g-mid:     #16573F;
@@ -45,7 +50,7 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   background-color: #F8F5F0;
   color: #18181A;
   overflow-x: hidden;
@@ -71,7 +76,7 @@ body {
 .prop-img:hover { transform: scale(1.03); }
 
 /* Serif headings */
-.serif { font-family: 'Instrument Serif', Georgia, serif; }
+.serif { font-family: 'Bodoni Moda', Georgia, serif; }
 
 /* Link underline */
 .link-underline {
@@ -86,3 +91,26 @@ body {
 
 /* Stagger animation target */
 [data-stagger] { opacity: 0; transform: translateY(24px); }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+:focus-visible { outline: 2px solid #B89A6A; outline-offset: 4px; }
+
+.dossier-grid {
+  background-image: linear-gradient(rgba(244,240,232,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(244,240,232,.055) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+.action-primary { display:inline-flex; min-height:3.25rem; align-items:center; gap:.8rem; background:#d6c4a1; color:#10271f; padding:.9rem 1.2rem; font-size:.78rem; font-weight:700; transition:transform .25s ease,background-color .25s ease; }
+.action-primary:hover { background:#e3d4b8; transform:translateY(-2px); }
+.action-primary:active { transform:translateY(0) scale(.98); }
+.action-link { display:inline-flex; align-items:center; gap:.55rem; font-size:.78rem; font-weight:600; text-decoration:underline; text-decoration-color:rgba(244,240,232,.28); text-underline-offset:.4rem; transition:color .25s ease,text-decoration-color .25s ease; }
+.action-link:hover { color:#d6c4a1; text-decoration-color:#d6c4a1; }
+.square-action { display:inline-flex; width:3rem; height:3rem; align-items:center; justify-content:center; background:#d6c4a1; color:#10271f; transition:transform .25s ease,background-color .25s ease; }
+.square-action:hover { background:#f4f0e8; transform:translateY(-2px); }
+.square-action:active { transform:translateY(0) scale(.97); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  *, *::before, *::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; }
+}

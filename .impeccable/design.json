@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T12:40:00Z",
+  "title": "Design System: Grapple Properties",
+  "extensions": {
+    "colorMeta": {
+      "forest-deep": { "role": "primary", "displayName": "Survey Forest", "canonical": "#10271f", "tonalRamp": ["#07120e", "#10271f", "#21463a", "#396858", "#638f7d", "#96b8aa", "#cadbd4", "#eef4f1"] },
+      "bronze-note": { "role": "secondary", "displayName": "Field Note Bronze", "canonical": "#d6c4a1", "tonalRamp": ["#241e15", "#493d2b", "#6e5e44", "#958164", "#b9a685", "#d6c4a1", "#e8dcc5", "#f7f1e7"] },
+      "paper": { "role": "neutral", "displayName": "Dossier Paper", "canonical": "#f4f0e8", "tonalRamp": ["#24221e", "#48453e", "#6f6a61", "#999287", "#beb7ac", "#d8d2c8", "#ebe6dd", "#f8f5ef"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Architectural Display", "purpose": "Major statements and property names." },
+      "body": { "displayName": "Advisory Body", "purpose": "Descriptions, navigation, and controls." },
+      "label": { "displayName": "Evidence Label", "purpose": "Short decision-critical fact labels." }
+    },
+    "shadows": [
+      { "name": "photo-overlay", "value": "0 24px 60px rgba(4,18,14,0.3)", "purpose": "Field-note panels placed over photography." }
+    ],
+    "motion": [
+      { "name": "reveal", "value": "1.15s cubic-bezier(0.16,1,0.3,1)", "purpose": "Single horizontal image reveal in the first viewport." },
+      { "name": "interaction", "value": "250ms ease", "purpose": "Button and text-link state changes." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main portfolio or consultation action.",
+      "html": "<button class=\"ds-action\">BROWSE THE PORTFOLIO →</button>",
+      "css": ".ds-action{background:#d6c4a1;color:#10271f;border:0;border-radius:0;padding:14px 19px;font:700 12px Manrope,sans-serif;transition:transform .25s ease,background .25s ease}.ds-action:hover{background:#e3d4b8;transform:translateY(-2px)}.ds-action:focus-visible{outline:2px solid #b89a6a;outline-offset:4px}.ds-action:active{transform:scale(.98)}"
+    },
+    {
+      "name": "Evidence Strip",
+      "kind": "custom",
+      "description": "Compact water, power, tenure, and security facts.",
+      "html": "<div class=\"ds-evidence\"><span>WATER<br><b>Borehole</b></span><span>POWER<br><b>16kVA solar</b></span><span>TENURE<br><b>Title deeds</b></span><span>SECURITY<br><b>Perimeter</b></span></div>",
+      "css": ".ds-evidence{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid rgba(244,240,232,.16);background:#10271f;color:rgba(244,240,232,.45);font:600 9px/1.5 Manrope,sans-serif;letter-spacing:.14em}.ds-evidence span{padding:16px 10px;border-right:1px solid rgba(244,240,232,.16)}.ds-evidence span:last-child{border:0}.ds-evidence b{color:#f4f0e8;font-weight:500;letter-spacing:0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Harare Field Dossier",
+    "overview": "Property is presented as something inspected, documented, and understood—not merely advertised. Architectural photography supplies emotion while survey-like rules, compact evidence rows, and restrained editorial typography supply confidence.",
+    "keyCharacteristics": ["Evidence-led property presentation", "Forest survey surfaces with warm paper notes", "Editorial asymmetry and decisive photography", "Fine rules and sparse bronze emphasis", "One deliberate reveal rather than scattered motion"],
+    "rules": [
+      { "name": "The Evidence Accent Rule", "body": "Bronze appears on actions and decision-critical details; it is never used as general decoration.", "section": "colors" },
+      { "name": "The Six-Rem Ceiling Rule", "body": "Display copy never exceeds 6rem and keeps tracking no tighter than -0.035em.", "section": "typography" },
+      { "name": "The Flat Evidence Rule", "body": "Cards and controls use either a rule or a shadow, never both for routine decoration.", "section": "elevation" }
+    ],
+    "dos": ["Do lead with title, water, power, security, land, or locality evidence.", "Do use one strong image at meaningful scale.", "Do preserve asymmetry and calm negative space."],
+    "donts": ["Don't use generic luxury gradients, decorative gold flourishes, or equal card towers as the page thesis.", "Don't add eyebrow text above headings.", "Don't use monospace outside identifiers, measurements, and data."]
+  }
+}

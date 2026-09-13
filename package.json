@@ -9,7 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@fontsource/instrument-serif": "^5.3.0",
+    "@fontsource/bodoni-moda": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
     "clsx": "^2.1.1",
     "framer-motion": "^13.2.0",
     "lucide-react": "^1.45.0",
